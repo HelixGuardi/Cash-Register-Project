@@ -48,7 +48,7 @@ Unlike the base example provided by freeCodeCamp, this version has been **redesi
 ---
 
 ## 📁 Project Structure
-``bash
+```bash
 Cash-Register-Project/
 │
 ├── index.html # Main structure and layout
