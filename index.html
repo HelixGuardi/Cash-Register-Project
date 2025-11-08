@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset='UTF-8'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'/>
+    <title>Cash Register Project | Victor Hugo Guardiola Pereira</title>
+    <link rel='stylesheet' href='styles.css'/>
+    <script
+      src="https://kit.fontawesome.com/2aa3a6cbb8.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- | -- LEFT SECTION STARTS HERE -- | -->
+    <section id='left-section'>
+      <!-- HEADER starts here -->
+      <div class='header'>
+        <div class='header-left-content'>
+          <h1>Cash Register Project | freeCodeCamp(<i class="fa-solid fa-fire"></i>)</h1>
+          <h2>Victor Hugo Guardiola Pereira</h2>
+          <span id='envelope-email-span'><i class="fa-solid fa-envelope"></i> victorhdevtech@gmail.com</span>
+        </div>
+      
+        <div class='header-right-content'>
+          <a href="https://github.com/HelixGuardi" id='github-link' target="_blank"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/victorhugo-dev/" id='linkedin-link' target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+      </div>
+      <!-- HEADER ends here -->
+
+
+
+      <!-- CHANGE DUE screen starts here -->
+      <div id='change-due'>
+        
+      </div>
+      <!-- CHANGE DUE screen ends here -->
+
+
+
+      <!-- REGISTER DASHBOARD starts here -->
+      <div class='register-dashboard-container'>
+        <div class='register-dashboard'>
+          <div class='cash-drawer-display' id='cash-drawer-display'>
+            <p><strong>Change in drawer:</strong></p>
+            <p>Pennies: $1.01</p>
+            <p>Nickels: $2.05</p>
+            <p>Dimes: $3.1</p>
+            <p>Quarters: $4.25</p>
+            <p>Ones: $90</p>
+            <p>Fives: $55</p>
+            <p>Tens: $20</p>
+            <p>Twenties: $60</p>
+            <p>Hundreds: $100</p>
+          </div>
+
+          <div class='keypad-container'>
+            <input
+              type="text"
+              id="cash"
+              name="number"
+              placeholder="€0.00";
+              required
+              readonly 
+              />
+
+              <div class='btns-grid'>
+                <!-- top row -->
+                <button type='button' class='basics-btn keypad-btn'>1</button>
+                <button type='button' class='basics-btn keypad-btn'>2</button>
+                <button type='button' class='basics-btn keypad-btn'>3</button>
+
+                <!-- 1/2 middle row -->
+                <button type='button' class='basics-btn keypad-btn'>4</button>
+                <button type='button' class='basics-btn keypad-btn'>5</button>
+                <button type='button' class='basics-btn keypad-btn'>6</button>
+
+                <!-- 2/2 middle row -->
+                <button type='button' class='basics-btn keypad-btn'>7</button>
+                <button type='button' class='basics-btn keypad-btn'>8</button>
+                <button type='button' class='basics-btn keypad-btn'>9</button>
+
+                <!-- bottom bottom row -->
+                <button type='button' class='basics-btn keypad-btn'>.</button>
+                <button type='button' class='basics-btn keypad-btn'>0</button>
+                <button type='button' class='basics-btn keypad-btn delete-btn'><i class="fa-solid fa-delete-left"></i></button>
+              </div>
+          </div>
+        </div>
+
+
+        <div class='pay-btns-container'>
+          <div class='pay-header'>
+            <span>PAY WITH:</span> 
+            <hr class='line-inline'>
+          </div>
+          
+          <div class='btn-group'>
+            <button id='purchase-btn' class='success-btn basics-btn'>PURSCHASE</button>
+            <button class='accent-btn basics-btn'><i class="fa-solid fa-print"></i> PRINT CV</button>
+          </div>
+        </div>
+
+      </div>
+      <!-- REGISTER DASHBOARD ends here -->
+    </section>
+    <!-- | -- LEFT SECTION ENDS HERE -- | -->
+    
+
+
+    <!-- | -- RIGHT SECTION STARTS HERE -- | -->
+    <section id='right-section'>
+      <!-- NAV starts here -->
+      <nav id='right-nav'>
+        <button type='button' class='nav-btn' aria-label='Open Menú'>
+          <i class="fa-solid fa-desktop"></i> <br>Menu
+        </button>
+
+        <button type='button' class='nav-btn' aria-label='Open Client'>
+          <i class="fa-solid fa-user"></i> <br>Client
+        </button>
+
+        <button type='button' class='nav-btn' aria-label='Open Orders'>
+          <i class="fa-solid fa-list-ul"></i> <br>Orders
+        </button>
+
+        <button type='button' class='nav-btn' aria-label=''>
+          <i class="fa-solid fa-table"></i> <br>Tables
+        </button>
+      </nav>
+      <!-- NAV ends here -->
+
+      <!-- Product list starts here -->
+      <div class='product-list-container'>
+        <!-- header -->
+        <div class='column-header'>
+          <span>PRODUCT</span>
+          <span>QTO.</span>
+          <span>UNITS</span>
+          <span>TOTAL</span>
+        </div>
+
+        <!-- product list -->
+        <div class='product-list'>
+          <div class='product-card'>
+            <p>PRODUCT_NAME_HERE</p>
+            <p>2</p>
+            <p>€2.50</p>
+            <p>€5.00</p>
+          </div>
+
+          <div class='product-card'>
+            <p>PRODUCT_NAME_HERE</p>
+            <p>1</p>
+            <p>€2.50</p>
+            <p>€2.50</p>
+          </div>
+
+          <div class='product-card'>
+            <p>PRODUCT_NAME_HERE</p>
+            <p>5</p>
+            <p>€2.00</p>
+            <p>€10.00</p>
+          </div>
+        </div>
+      </div>
+      <!-- Product list ends here -->
+
+      <!-- Dashboard controller starts here  -->
+      <div class='dashboard-container'>
+        <!-- Dashboard -->
+        <div class='dashboard'>
+          <!-- left side -->
+          <div class='dashboard-left-side'>
+            <!-- articles -->
+            <div class='basic-info-display'>
+              <p>Articles</p>
+              <span id='articles-qto-display'>3</span>
+            </div>
+
+            <!-- discount -->
+            <div class='basic-info-display'>
+              <p>Discount</p>
+              <span>0%</span>
+            </div>
+
+            <!-- total -->
+            <div>
+              <p>TOTAL</p>
+              <span id='price-screen'>$17.50</span>
+            </div>
+          </div>
+          
+          <!-- right side -->
+          <div class='dashboard-right-side'>
+            <button type='button' aria-label='Add product manually' class='ghost-btn-style'>
+              <i class="fa-solid fa-circle-plus"></i> </br> ADD A PRODUCT MANUALLY
+            </button>
+            <button type='button' aria-label='Print order' class='ghost-btn-style'>
+              <i class="fa-solid fa-print"></i> </br> PRINT ORDER
+            </button>
+            <button type='button' aria-label='Savings Account' class='ghost-btn-style'>
+              <i class="fa-solid fa-piggy-bank"></i> </br> SAVING ACCOUNT
+            </button>
+            <button type='button' class='disabled ghost-btn-style'></button>
+          </div>
+        </div>
+
+        <!-- Controller -->
+        <div class='controller'>
+          <button class='controller-btn-style cancel-order-btn'>CANCEL ORDER</button>
+          <button class='controller-btn-style order-btn'>ORDER</button>
+          <button id='pay-btn' class='controller-btn-style pay-btn'>PAY</button>
+        </div>
+
+      </div>
+      <!-- Dashboard controller ends here -->
+    </section>
+    <!-- | -- RIGHT SECTION ENDS HERE -- | -->
+
+    <script src='script.js'></script>
+  </body>
+</html>

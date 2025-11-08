@@ -1,0 +1,623 @@
+/* === GLOBAL STYLES === */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg-color: #0f0f10;
+  --card-bg: #18181a;
+  --accent: #007aff;
+  --accent-border: #00bfff;
+  --text-color: #f2f2f2;
+  --subtext-color: #a3a3a3;
+  --border-color: #2a2a2d;
+  --danger: #d93838;
+  --success: #2ecc71;
+  --btn-hover-bg: #2f2f2f;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  min-height: 100dvh;
+  background-color: var(--bg-color, #0f0f10);
+  color: var(--text-color, #f2f2f2);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+i{
+  margin: 5px;
+}
+
+/* === <a> personalization === */
+a {
+  color: var(--accent, #007aff);
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2.5px;
+  background: var(--accent, #007aff);
+  transition: width 0.3s ease;
+  box-shadow: 0px -3px 5px var(--accent, #007aff);
+}
+
+a:hover {
+  transform: scale(1.05);
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* === GENERAL BTN STYLES === */
+.basics-btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: #212121;
+  color: var(--text-color, #f2f2f2);
+  transition: all 0.25s ease;
+}
+
+
+.basics-btn:hover {
+  opacity: 70%;
+}
+
+.accent-btn{
+  background-color: var(--accent, #007aff);
+}
+
+.success-btn{
+  background-color: var(--success, #2ecc71);
+}
+
+.keypad-btn{
+  padding: 0;
+  font-size: 1.3rem;
+}
+
+.nav-btn{
+  width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  border: 1.5px solid var(--border-color, #2a2a2d);
+  cursor: pointer;
+  padding: 2.5rem 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: #141414;
+  color: var(--text-color, #f2f2f2);
+  transition: all 0.25s ease;
+}
+
+.nav-btn:hover{
+  opacity: 65%;
+}
+
+.nav-btn:focus{
+  outline: 1px solid var(--bg-color, #0f0f10);
+}
+
+.basics-btn:active,
+.nav-btn:active{
+  transform: scale(0.97);
+  background-color: #111;
+}
+
+@media (max-width: 1175px){
+  .nav-btn{
+    padding: 1.5rem;
+    border-radius: 10px;
+  }
+}
+
+.ghost-btn-style{
+  cursor: pointer;
+  border: 2px solid var(--border-color, #2a2a2d);
+  background: none;
+  color: var(--subtext-color, #a3a3a3);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 0.85rem;
+  transition: all 0.25s ease;
+}
+
+.ghost-btn-style:hover{
+  opacity: 70%;
+  box-shadow: 0 0 5px var(--subtext-color, #a3a3a3)
+}
+
+.controller-btn-style{
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  padding: 1rem 1.5rem;
+  border-radius: 20px;
+  background: none;
+  font-size: 1.5rem;
+  transition: all 0.25s ease;
+}
+
+.controller-btn-style:hover{
+  opacity: 70%;
+}
+
+.ghost-btn-style:active,
+.controller-btn-style:active{
+  transform: scale(0.97);
+}
+
+.delete-btn:active{
+  outline: 2px solid var(--danger, #d93838);
+  color: var(--danger, #d93838);
+}
+
+.cancel-order-btn{
+  border: 2px solid var(--danger, #d93838);
+  color: var(--danger, #d93838);
+}
+
+.order-btn{
+  border: 2px solid var(--accent, #007aff);
+  color: var(--accent, #007aff);
+}
+
+.pay-btn{
+  border: 2px solid var(--accent-border, #00bfff);
+  background-color: var(--accent, #007aff);
+  color: var(--text-color, #f2f2f2);
+}
+
+.disabled:hover{
+  cursor: default!important;
+  box-shadow: none!important;
+  opacity: 100%!important;
+}
+
+.disabled:active{
+  transform: none!important;
+}
+
+/* === LEFT & RIGHT SECTION === */
+#left-section{
+  height: 100dvh;
+  padding: 1.5rem;
+  border: 1px solid var(--border-color, #2a2a2d);
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+#right-section{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  #left-section,
+  #right-section {
+    flex: 1 1 100%;
+  }
+}
+
+
+/*=======================
+=== --- LEFT SIDE --- === 
+=======================*/
+
+/* === HEADER === */
+.header{
+  padding: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color, #2a2a2d);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-left-content{
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#envelope-email-span i{
+  font-size: 1.3rem;
+}
+
+.header-right-content{
+  height: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-right-content a i{
+  font-size: 2.7rem;
+}
+
+#linkedin-link,
+#github-link{
+  color: white;
+  font-weight: 500;
+  transition: all .5s ease-out;
+}
+
+/* === REGISTER DASHBOARD === */
+.register-dashboard-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+
+.register-dashboard{
+  padding: 0.5rem 7rem;
+  width: 100%;
+  height: 550px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* === CASH DRAWER DISPLAY === */
+.cash-drawer-display{
+  border: 3px solid var(--border-color, #2a2a2d);
+  border-radius: 5px;
+  padding: 1.2rem;
+  width: 100%;
+  height: 100%;
+  font-size: 1.3rem;
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 7px;
+}
+
+/* === KEYPAD DASHBOARD === */
+.keypad-container{
+  height: 100%;
+  flex: 2 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+
+.keypad-container > input{
+  padding: 0 20px;
+  width: 100%;
+  height: 85px;
+  border: 3px solid #2F2F2F;
+  border-radius: 10px;
+  background: #131313;
+  color: var(--text-color, #f2f2f2);
+  text-align: end;
+  font-size: 2.5rem;
+}
+
+.keypad-container >input[type=number]::-webkit-inner-spin-button,
+.keypad-container >input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.keypad-container >input[type=number] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+
+/* === BTNs GRID === */
+.btns-grid{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+}
+
+/* === PAY-DASHBOARD BTNs === */
+.pay-btns-container{
+  padding: 1rem 7rem;
+  width: 100%;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pay-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+
+.pay-header span{
+  color: var(--subtext-color, #a3a3a3);
+  font-weight: 500;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  flex: 1 1 10%;
+}
+
+.line-inline{
+  width: 100px;
+  flex: 2 1 90%;
+}
+
+.btn-group{
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* === CHANGE DUE === */
+#change-due{
+  display: none;
+  width: 100%;
+  padding: 20px;
+  border: 2px solid var(--border-color);
+  border-radius: 7px;
+  text-align: center;
+  font-size: 1.3rem;
+  animation: slide-in 1.3s ease;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+@keyframes slide-in {
+  from{
+    transform: translateY(30%);
+    opacity: 0;
+  }
+
+  to{
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+/*===========================================
+=== --- RESPONSIVE DESIGN [LEFT SIDE] --- === 
+===========================================*/
+
+/* tablets (until 1175px) */
+@media (max-width: 1175px){
+  body{
+    flex-direction: column;
+  }
+
+  #left-section,
+  #right-section {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .register-dashboard{
+    padding: 2rem;
+    height: auto;
+  }
+
+  .keypad-container{
+    width: 100%;
+    height: auto;
+  }
+
+  .cash-drawer-display{
+    padding: 0.5rem;
+    font-size: 0.95rem;
+    align-items: flex-start;
+  }
+
+  .pay-btns-container{
+    padding: 1rem 2rem;
+  }
+
+  .btn-group{
+    gap: 10px;
+  }
+
+  #change-due{
+    padding:5px;
+    height: 150px;
+  }
+}
+
+/* smartphones (until 600px) */
+@media (max-width: 600px){
+  body{
+    font-size: 0.9rem;
+  }
+
+  .header{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .header-right-content a i{
+    font-size: 2rem;
+  }
+
+  .register-dashboard{
+    padding: 1rem;
+  }
+
+  .keypad-container > input{
+    height: 60px;
+    font-size: 1.8rem;
+  }
+
+  .btns-grid{
+    gap: 5px;
+  }
+
+  basics-btn{
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .pay-header span{
+    font-size: 0.8rem;
+  }
+
+  #change-due{
+    padding: 5px;
+    height: 150px;
+  }
+}
+
+
+/*========================
+=== --- RIGHT SIDE --- === 
+========================*/
+
+/* === NAV === */
+#right-nav{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* === PRODUCT LIST === */
+.product-list-container{
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
+}
+
+.column-header{
+  border-bottom: 2px solid var(--border-color, #2a2a2d);
+  padding: 7px 25px;
+  font-size: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-list{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.product-list-container::-webkit-scrollbar {
+  width: 8px;
+  opacity: 55%;
+}
+.product-list-container::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 10px;
+}
+.product-list-container::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.product-card{
+  border: 2px solid var(--border-color, #2a2a2d);
+  border-radius: 15px;
+  padding: 25px 30px;
+  background-color: #212121;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* === DASHBOARD === */
+.dashboard-container{
+  flex: 0.5 0 auto;
+  border-top: 2px solid var(--border-color, #2a2a2d);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dashboard{
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dashboard-left-side{
+  border-right: 1px solid var(--border-color, #2a2a2d);
+  height: 100%;
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.basic-info-display{
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+#price-screen{
+  font-size: 3rem;
+}
+
+.dashboard-right-side{
+  height: 100%;
+  padding: 10px 5px;
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5px;
+}
+
+.controller{
+  border-top: 1px solid var(--color-border, #2a2a2d);
+  padding: 5px;
+  flex: 0.7;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+}
+
+
+/*============================================
+=== --- RESPONSIVE DESIGN [RIGHT SIDE] --- === 
+============================================*/
+@media (max-width: 1175px){
+  #right-nav{
+    gap: 13px;
+  }
+}
