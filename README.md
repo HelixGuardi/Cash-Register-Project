@@ -1,7 +1,7 @@
 # 💰 Cash Register Project  
 _A modern Point of Sale (POS) interface built with HTML, CSS, and JavaScript._
 
-![Project Preview](preview.png)
+![Project Preview](Preview.png)
 
 ## 🧩 Overview
 This project was developed as part of the **freeCodeCamp JavaScript Algorithms and Data Structures certification**.  
