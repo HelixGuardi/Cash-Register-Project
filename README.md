@@ -55,7 +55,7 @@ Cash-Register-Project/
 ├── styles.css # Styles and responsive design
 ├── script.js # Core logic of the cash register
 └── README.md # Project documentation
-
+```
 ---
 
 ## 🧠 Key Learning Takeaways
